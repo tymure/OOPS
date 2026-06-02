@@ -199,6 +199,8 @@ Recovery-specific follow-up work is tracked in `recovery-todo.md`.
 
 This project moves quickly, so small focused changes are easiest to review.
 
+Want to talk to other contributors? [Join the group here](https://x.com/i/chat/group_join/g2061785795330019536/3SHQtt2O8f).
+
 - Keep changes close to the feature or bug you are working on.
 - Match the existing SwiftUI style before introducing new patterns.
 - Build after touching Swift, Rust bridge, project, or signing settings.
