@@ -42,7 +42,7 @@ final class WorkoutLiveActivityController {
       lastState = state
       lastUpdateAt = Date()
     } catch {
-      NSLog("GooseSwift workout Live Activity start failed: \(String(describing: error))")
+      NSLog("OOPS workout Live Activity start failed: \(String(describing: error))")
     }
   }
 

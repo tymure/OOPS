@@ -371,7 +371,7 @@ private extension Data {
 }
 
 enum CodexSelfContainedAuthKeychain {
-  private static let service = "com.goose.swift.codex"
+  private static let service = "com.tymure.oops.codex"
   private static let account = "chatgpt-auth"
 
   static func save(_ auth: CodexStoredChatGPTAuth) throws {

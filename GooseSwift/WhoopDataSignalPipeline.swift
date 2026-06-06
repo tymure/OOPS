@@ -3,7 +3,7 @@ import Foundation
 final class WhoopDataSignalPipeline {
   var onStatus: ((String) -> Void)?
 
-  private let queue = DispatchQueue(label: "com.goose.swift.whoop-data-signal", qos: .utility)
+  private let queue = DispatchQueue(label: "com.tymure.oops.whoop-data-signal", qos: .utility)
   private let stateLock = NSLock()
   private let ble: GooseBLEClient
   private let packetUIStateAggregator: PacketUIStateAggregator

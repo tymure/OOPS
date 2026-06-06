@@ -120,9 +120,9 @@ struct GooseDebugCommandDefinition: Identifiable, Equatable {
 
   var remoteURLExample: String {
     if requiresPayloadHex {
-      return "gooseswift://debug-command/\(id)?payload=<hex>"
+      return "oops://debug-command/\(id)?payload=<hex>"
     }
-    return "gooseswift://debug-command/\(id)"
+    return "oops://debug-command/\(id)"
   }
 }
 
@@ -148,4 +148,3 @@ struct GooseDebugCommandResponse: Identifiable, Equatable {
     return "\(status) | \(result) | seq \(sequence) | \(body) | \(time.formatted(date: .omitted, time: .standard))"
   }
 }
-

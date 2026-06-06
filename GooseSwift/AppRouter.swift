@@ -59,7 +59,7 @@ final class AppRouter: ObservableObject {
       return true
     }
 
-    if url.scheme == "gooseswift", url.host == "coach" {
+    if ["oops", "gooseswift"].contains(url.scheme?.lowercased() ?? ""), url.host == "coach" {
       selectedTab = .coach
       if url.pathComponents.dropFirst().first == "embedded-login" {
         codexEmbeddedLoginRequestID += 1
@@ -67,7 +67,7 @@ final class AppRouter: ObservableObject {
       return true
     }
 
-    if url.scheme == "gooseswift", url.host == "more" {
+    if ["oops", "gooseswift"].contains(url.scheme?.lowercased() ?? ""), url.host == "more" {
       let routeName = url.pathComponents.dropFirst().first ?? ""
       if routeName.isEmpty {
         openMore(nil)
@@ -80,7 +80,7 @@ final class AppRouter: ObservableObject {
       return true
     }
 
-    guard url.scheme == "gooseswift", url.host == "health" else {
+    guard ["oops", "gooseswift"].contains(url.scheme?.lowercased() ?? ""), url.host == "health" else {
       return false
     }
     let routeName = url.pathComponents.dropFirst().first ?? ""
@@ -99,6 +99,6 @@ final class AppRouter: ObservableObject {
     guard let scheme = url.scheme?.lowercased() else {
       return false
     }
-    return ["gooseswift", "goose"].contains(scheme) && url.host == "codex-auth"
+    return ["oops", "gooseswift", "goose"].contains(scheme) && url.host == "codex-auth"
   }
 }

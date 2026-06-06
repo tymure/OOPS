@@ -13,7 +13,7 @@ struct SleepDataBridgeSection: View {
       VStack(spacing: 8) {
         HealthInfoRow(row: HealthSummaryRow("Band history", value: "\(ble.historicalSyncStatus) | \(packetText)", source: .live("WHOOP historical sync"), systemImage: "antenna.radiowaves.left.and.right"))
         HealthInfoRow(row: HealthSummaryRow("Band sleep import", value: store.bandSleepImportStatus, source: .bridge("band historical packets"), systemImage: "square.stack.3d.up"))
-        HealthInfoRow(row: HealthSummaryRow("Goose sleep score", value: store.sleepFeatureScoreSummary(), source: store.packetScoreSource("metrics.sleep_score_from_features"), systemImage: "bed.double"))
+        HealthInfoRow(row: HealthSummaryRow("OOPS sleep score", value: store.sleepFeatureScoreSummary(), source: store.packetScoreSource("metrics.sleep_score_from_features"), systemImage: "bed.double"))
       }
       HStack(spacing: 10) {
         Button {
@@ -205,7 +205,7 @@ struct SleepAlarmBridgeSection: View {
       return .live("WHOOP alarm event")
     }
     if ble.canWriteAlarm {
-      return .live("GooseBLEClient alarm write")
+      return .live("BLE alarm write")
     }
     return .unavailable(ble.alarmWriteSupportSummary)
   }
@@ -214,4 +214,3 @@ struct SleepAlarmBridgeSection: View {
     Calendar.current.date(bySettingHour: 7, minute: 0, second: 0, of: Date()) ?? Date()
   }
 }
-

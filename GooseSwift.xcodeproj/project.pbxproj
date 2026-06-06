@@ -961,8 +961,8 @@
 					"-force_load",
 					"$(SRCROOT)/Rust/$(PLATFORM_NAME)/libgoose_core.a",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.goose.swift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tymure.oops;
+				PRODUCT_NAME = OOPS;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "GooseSwift/GooseSwift-Bridging-Header.h";
@@ -1004,8 +1004,8 @@
 					"-force_load",
 					"$(SRCROOT)/Rust/$(PLATFORM_NAME)/libgoose_core.a",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.goose.swift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tymure.oops;
+				PRODUCT_NAME = OOPS;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "GooseSwift/GooseSwift-Bridging-Header.h";
@@ -1033,7 +1033,7 @@
 				);
 				MARKETING_VERSION = 0.1.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goose.swift.WorkoutLiveActivityExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tymure.oops.WorkoutLiveActivityExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1061,7 +1061,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goose.swift.WorkoutLiveActivityExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tymure.oops.WorkoutLiveActivityExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

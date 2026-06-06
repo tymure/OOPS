@@ -54,7 +54,7 @@ extension GooseLocalDataExporter {
     let baseDirectory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
       ?? FileManager.default.temporaryDirectory
     return baseDirectory
-      .appendingPathComponent("GooseSwift", isDirectory: true)
+      .appendingPathComponent("OOPS", isDirectory: true)
       .appendingPathComponent("goose.sqlite")
       .path
   }
@@ -80,18 +80,18 @@ extension GooseLocalDataExporter {
     fileManager: FileManager
   ) -> [URL] {
     var urls: [URL] = []
-    if pathSet.contains("Application Support/GooseSwift/goose-ble.log"),
+    if pathSet.contains("Application Support/OOPS/goose-ble.log"),
        let appSupport = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
       urls.append(
         appSupport
-          .appendingPathComponent("GooseSwift", isDirectory: true)
+          .appendingPathComponent("OOPS", isDirectory: true)
           .appendingPathComponent("goose-ble.log")
       )
     }
-    if pathSet.contains("Documents/GooseSwift/goose-ble-live.log") {
+    if pathSet.contains("Documents/OOPS/goose-ble-live.log") {
       urls.append(
         documentsDirectory
-          .appendingPathComponent("GooseSwift", isDirectory: true)
+          .appendingPathComponent("OOPS", isDirectory: true)
           .appendingPathComponent("goose-ble-live.log")
       )
     }
@@ -231,9 +231,9 @@ extension GooseLocalDataExporter {
   static func exportRoots(fileManager: FileManager, documentsDirectory: URL) -> [(label: String, url: URL)] {
     var roots: [(String, URL)] = []
     if let appSupport = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
-      roots.append(("Application Support/GooseSwift", appSupport.appendingPathComponent("GooseSwift", isDirectory: true)))
+      roots.append(("Application Support/OOPS", appSupport.appendingPathComponent("OOPS", isDirectory: true)))
     }
-    roots.append(("Documents/GooseSwift", documentsDirectory.appendingPathComponent("GooseSwift", isDirectory: true)))
+    roots.append(("Documents/OOPS", documentsDirectory.appendingPathComponent("OOPS", isDirectory: true)))
     if let library = fileManager.urls(for: .libraryDirectory, in: .userDomainMask).first {
       roots.append(("Library/Preferences", library.appendingPathComponent("Preferences", isDirectory: true)))
     }
@@ -303,13 +303,13 @@ extension GooseLocalDataExporter {
     }
 
     switch label {
-    case "Application Support/GooseSwift":
+    case "Application Support/OOPS":
       return relativePath == "goose.sqlite"
         || relativePath == "goose.sqlite-wal"
         || relativePath == "goose.sqlite-shm"
         || relativePath == "goose-ble.log"
         || relativePath.hasPrefix("goose-ble.")
-    case "Documents/GooseSwift":
+    case "Documents/OOPS":
       return relativePath == "goose-ble-live.log"
         || relativePath.hasPrefix("OvernightGuard/\(requiredOvernightSessionID)/")
     case "Library/Preferences":

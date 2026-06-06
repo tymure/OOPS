@@ -68,7 +68,7 @@ final class HeartRateSeriesStore {
 
   private let url: URL
   private let stateLock = NSLock()
-  private let writeQueue = DispatchQueue(label: "com.goose.swift.heart-rate-series", qos: .utility)
+  private let writeQueue = DispatchQueue(label: "com.tymure.oops.heart-rate-series", qos: .utility)
   private var samples: [HeartRateSamplePoint]
   private var pendingWrite: DispatchWorkItem?
   private var lastNotificationAt = Date.distantPast
@@ -233,7 +233,7 @@ final class HeartRateSeriesStore {
   private static func defaultURL() -> URL {
     let baseDirectory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
       ?? FileManager.default.temporaryDirectory
-    let directory = baseDirectory.appendingPathComponent("GooseSwift", isDirectory: true)
+    let directory = baseDirectory.appendingPathComponent("OOPS", isDirectory: true)
     try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
     return directory
       .appendingPathComponent("heart-rate-samples.json")
@@ -293,7 +293,7 @@ final class HeartRateSeriesStore {
       let data = try encoder.encode(payload)
       try data.write(to: url, options: .atomic)
     } catch {
-      NSLog("GooseSwift heart-rate sample persist failed: \(String(describing: error))")
+      NSLog("OOPS heart-rate sample persist failed: \(String(describing: error))")
     }
   }
 
@@ -348,7 +348,7 @@ final class HRVSeriesStore {
 
   private let url: URL
   private let stateLock = NSLock()
-  private let writeQueue = DispatchQueue(label: "com.goose.swift.hrv-series", qos: .utility)
+  private let writeQueue = DispatchQueue(label: "com.tymure.oops.hrv-series", qos: .utility)
   private var samples: [HRVSamplePoint]
   private var pendingWrite: DispatchWorkItem?
   private var lastNotificationAt = Date.distantPast
@@ -436,7 +436,7 @@ final class HRVSeriesStore {
   private static func defaultURL() -> URL {
     let baseDirectory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
       ?? FileManager.default.temporaryDirectory
-    let directory = baseDirectory.appendingPathComponent("GooseSwift", isDirectory: true)
+    let directory = baseDirectory.appendingPathComponent("OOPS", isDirectory: true)
     try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
     return directory
       .appendingPathComponent("hrv-samples.json")
@@ -516,7 +516,7 @@ final class HRVSeriesStore {
       let data = try encoder.encode(payload)
       try data.write(to: url, options: .atomic)
     } catch {
-      NSLog("GooseSwift HRV sample persist failed: \(String(describing: error))")
+      NSLog("OOPS HRV sample persist failed: \(String(describing: error))")
     }
   }
 
@@ -533,7 +533,7 @@ final class HRVSeriesStore {
 final class HeartRateSamplePipeline {
   var onHeartRateTimelineSnapshot: ((HeartRateTimelineSnapshot) -> Void)?
 
-  private let queue = DispatchQueue(label: "com.goose.swift.heart-rate-sample-pipeline", qos: .utility)
+  private let queue = DispatchQueue(label: "com.tymure.oops.heart-rate-sample-pipeline", qos: .utility)
   private let heartRateStore: HeartRateSeriesStore
   private let hrvStore: HRVSeriesStore
   private let timelinePublishInterval: TimeInterval

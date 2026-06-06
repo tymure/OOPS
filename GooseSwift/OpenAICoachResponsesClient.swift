@@ -122,7 +122,7 @@ enum OpenAICoachRequestFactory {
     [
       "type": "function",
       "name": "load_stats",
-      "description": "Load the current local Goose metric snapshot, readiness status, score summaries, live heart-rate summary, and provenance.",
+      "description": "Load the current local OOPS metric snapshot, readiness status, score summaries, live heart-rate summary, and provenance.",
       "parameters": emptyParameters,
       "strict": true,
     ],

@@ -436,7 +436,7 @@ enum GooseLocalDataExporter {
     let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
       ?? fileManager.temporaryDirectory
     let exportsDirectory = documentsDirectory
-      .appendingPathComponent("GooseSwift", isDirectory: true)
+      .appendingPathComponent("OOPS", isDirectory: true)
       .appendingPathComponent("Exports", isDirectory: true)
     try fileManager.createDirectory(at: exportsDirectory, withIntermediateDirectories: true)
     try applyExportProtection(to: exportsDirectory)

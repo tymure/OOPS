@@ -674,7 +674,7 @@ extension GooseAppModel {
     let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
       ?? FileManager.default.temporaryDirectory
     return documents
-      .appendingPathComponent("GooseSwift", isDirectory: true)
+      .appendingPathComponent("OOPS", isDirectory: true)
       .appendingPathComponent("OvernightGuard", isDirectory: true)
   }
 

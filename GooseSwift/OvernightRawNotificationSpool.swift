@@ -79,7 +79,7 @@ final class OvernightRawNotificationSpool: @unchecked Sendable {
   private static let eventLogSyncInterval: TimeInterval = 5
   private static let checkpointInterval: TimeInterval = 60
 
-  private let queue = DispatchQueue(label: "com.goose.swift.overnight-raw-spool", qos: .utility)
+  private let queue = DispatchQueue(label: "com.tymure.oops.overnight-raw-spool", qos: .utility)
   private var sessionID: String?
   private var directoryURL: URL?
   private var rawNotificationsURL: URL?

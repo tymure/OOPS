@@ -334,7 +334,7 @@ extension GooseBLEClient {
       diagnosticLogSetupWarnings.append(warning)
     }
     diagnosticLogSetupWarningLock.unlock()
-    Logger(subsystem: "com.goose.swift", category: "ble")
+    Logger(subsystem: "com.tymure.oops", category: "ble")
       .error("BLE diagnostic log setup failed: \(warning, privacy: .public)")
   }
 

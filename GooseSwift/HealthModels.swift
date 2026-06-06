@@ -51,7 +51,7 @@ enum HealthRoute: String, CaseIterable, Identifiable, Hashable {
   }
 
   var deepLinkPath: String {
-    "gooseswift://health/\(rawValue)"
+    "oops://health/\(rawValue)"
   }
 }
 

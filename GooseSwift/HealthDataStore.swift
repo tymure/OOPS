@@ -34,8 +34,8 @@ final class HealthDataStore: ObservableObject {
   var packetInputIsRunning = false
   var heartRateTimelineRefreshID: UUID?
   var heartRateSeriesUpdateObserver: NSObjectProtocol?
-  let packetInputQueue = DispatchQueue(label: "com.goose.swift.health.packet-inputs", qos: .utility)
-  let heartRateTimelineQueue = DispatchQueue(label: "com.goose.swift.health.heart-rate-timeline", qos: .utility)
+  let packetInputQueue = DispatchQueue(label: "com.tymure.oops.health.packet-inputs", qos: .utility)
+  let heartRateTimelineQueue = DispatchQueue(label: "com.tymure.oops.health.heart-rate-timeline", qos: .utility)
   lazy var databasePath = HealthDataStore.defaultDatabasePath()
 
   static let liveHRVRMSSDDefaultsKey = "goose.swift.liveHRVRMSSD"
@@ -74,7 +74,7 @@ final class HealthDataStore: ObservableObject {
   static func defaultDatabasePath() -> String {
     let baseDirectory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
       ?? FileManager.default.temporaryDirectory
-    let directory = baseDirectory.appendingPathComponent("GooseSwift", isDirectory: true)
+    let directory = baseDirectory.appendingPathComponent("OOPS", isDirectory: true)
     try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
     return directory.appendingPathComponent("goose.sqlite").path
   }
@@ -89,7 +89,7 @@ final class HealthDataStore: ObservableObject {
 
   var localHealthExportText: String {
     [
-      "Goose Health Export",
+      "OOPS Health Export",
       "Catalog: \(catalogStatus)",
       "Band sleep import: \(bandSleepImportStatus)",
       "HealthKit metric import: disabled; profile weight only",

@@ -80,10 +80,10 @@ final class GooseBLEClient: NSObject, ObservableObject {
   var onHistoricalRangeTelemetry: ((GooseHistoricalRangeTelemetry) -> Void)?
   var onMessage: ((GooseMessage) -> Void)?
 
-  let logger = Logger(subsystem: "com.goose.swift", category: "ble")
-  let coreBluetoothQueue = DispatchQueue(label: "com.goose.swift.corebluetooth", qos: .utility)
-  let realtimeVitalsQueue = DispatchQueue(label: "com.goose.swift.realtime-vitals", qos: .userInitiated)
-  let diagnosticLogQueue = DispatchQueue(label: "com.goose.swift.diagnostic-log", qos: .utility)
+  let logger = Logger(subsystem: "com.tymure.oops", category: "ble")
+  let coreBluetoothQueue = DispatchQueue(label: "com.tymure.oops.corebluetooth", qos: .utility)
+  let realtimeVitalsQueue = DispatchQueue(label: "com.tymure.oops.realtime-vitals", qos: .userInitiated)
+  let diagnosticLogQueue = DispatchQueue(label: "com.tymure.oops.diagnostic-log", qos: .utility)
   let bleUIStateAggregator = BLEUIStateAggregator(publishInterval: GooseBLEClient.bleUIStatePublishInterval)
   let messageStore = GooseMessageStore(
     maximumMessages: GooseBLEClient.maximumDisplayedMessages,
@@ -173,7 +173,7 @@ final class GooseBLEClient: NSObject, ObservableObject {
       GooseBLEClient.recordDiagnosticLogSetupWarning("goose-ble.log setup failed: Application Support directory unavailable")
       return nil
     }
-    let gooseDirectory = directory.appendingPathComponent("GooseSwift", isDirectory: true)
+    let gooseDirectory = directory.appendingPathComponent("OOPS", isDirectory: true)
     let url = gooseDirectory.appendingPathComponent("goose-ble.log")
     do {
       try GooseBLEClient.prepareDiagnosticLogDirectory(gooseDirectory)
@@ -197,7 +197,7 @@ final class GooseBLEClient: NSObject, ObservableObject {
       GooseBLEClient.recordDiagnosticLogSetupWarning("goose-ble-live.log mirror setup failed: Documents directory unavailable")
       return nil
     }
-    let gooseDirectory = directory.appendingPathComponent("GooseSwift", isDirectory: true)
+    let gooseDirectory = directory.appendingPathComponent("OOPS", isDirectory: true)
     let url = gooseDirectory.appendingPathComponent("goose-ble-live.log")
     do {
       try GooseBLEClient.prepareDiagnosticLogFile(at: url, directory: gooseDirectory)
@@ -212,7 +212,7 @@ final class GooseBLEClient: NSObject, ObservableObject {
       GooseBLEClient.recordDiagnosticLogSetupWarning("goose-ble-live.log setup failed: Documents directory unavailable")
       return nil
     }
-    let gooseDirectory = directory.appendingPathComponent("GooseSwift", isDirectory: true)
+    let gooseDirectory = directory.appendingPathComponent("OOPS", isDirectory: true)
     let url = gooseDirectory.appendingPathComponent("goose-ble-live.log")
     do {
       try GooseBLEClient.prepareDiagnosticLogFile(at: url, directory: gooseDirectory)
@@ -332,7 +332,7 @@ final class GooseBLEClient: NSObject, ObservableObject {
     static let debugHistoricalRangeStatus = "goose.swift.debug.historicalRangeStatus"
   }
 
-  static let restorationIdentifier = "com.goose.swift.central"
+  static let restorationIdentifier = "com.tymure.oops.central"
   static let heartRatePublishInterval: TimeInterval = 1
   static let heartRateCallbackInterval: TimeInterval = 0.1
   static let notificationSyncPublishInterval: TimeInterval = 1

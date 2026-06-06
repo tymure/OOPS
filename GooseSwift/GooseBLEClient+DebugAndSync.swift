@@ -111,7 +111,7 @@ extension GooseBLEClient {
       "connection": connectionState,
       "active_device": activeDeviceName,
       "status": debugCommandStatus,
-      "remote_url_format": "gooseswift://debug-command/<id>?payload=<hex>",
+      "remote_url_format": "oops://debug-command/<id>?payload=<hex>",
       "commands": Self.debugResearchCommandDefinitions.map(debugCommandDefinitionPayload),
       "pending": pendingDebugCommands.values
         .sorted { $0.requestedAt > $1.requestedAt }
@@ -138,14 +138,14 @@ extension GooseBLEClient {
     if let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
       urls.append(
         documentsURL
-          .appendingPathComponent("GooseSwift", isDirectory: true)
+          .appendingPathComponent("OOPS", isDirectory: true)
           .appendingPathComponent("debug-bt-commands.json")
       )
     }
     if let supportURL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
       urls.append(
         supportURL
-          .appendingPathComponent("GooseSwift", isDirectory: true)
+          .appendingPathComponent("OOPS", isDirectory: true)
           .appendingPathComponent("debug-bt-commands.json")
       )
     }

@@ -302,7 +302,7 @@ struct MoreDebugView: View {
         )
         MoreInfoRow(
           title: "Remote Calls",
-          value: "gooseswift://debug-command/<id>?payload=<hex>",
+          value: "oops://debug-command/<id>?payload=<hex>",
           systemImage: "link",
           status: .pending
         )

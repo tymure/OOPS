@@ -41,7 +41,7 @@ struct OnboardingProfileStep: View {
 
   var body: some View {
     VStack(alignment: .leading, spacing: 18) {
-      Text("These basics help Goose calculate your local metrics.")
+      Text("These basics help OOPS calculate your local metrics.")
         .font(.body)
         .foregroundStyle(.secondary)
 
@@ -274,13 +274,13 @@ struct OnboardingConnectStep: View {
 
   private var connectBody: String {
     if canVerify {
-      return "Finish setup to start using Goose with this strap."
+      return "Finish setup to start using OOPS with this strap."
     }
     if connected {
-      return "Keep the strap close while Goose confirms it can read data."
+      return "Keep the strap close while OOPS confirms it can read data."
     }
     if hasDiscoveredStraps {
-      return "Select the strap you want to use with Goose."
+      return "Select the strap you want to use with OOPS."
     }
     if searching {
       return "Keep Bluetooth on and keep the strap close to this phone."
@@ -600,4 +600,3 @@ struct OnboardingDiscoveredStrapRow: View {
     .buttonStyle(.plain)
   }
 }
-

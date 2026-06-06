@@ -331,7 +331,7 @@ extension MoreDataStore {
   static func previewConnected() -> MoreDataStore {
     let store = previewDefault()
     store.captureStatus = "Ready for connected strap"
-    store.liveCaptureStatus = "Ready; notifications are mirrored through GooseBLEClient.onNotification"
+    store.liveCaptureStatus = "Ready; notifications are mirrored through the BLE notification handler"
     store.recentCaptureSessions = []
     store.healthSyncReports = ["Apple Health metric sync disabled; profile weight autofill only"]
     return store
@@ -435,7 +435,7 @@ extension MoreDataStore {
   static func applicationDirectory() -> URL {
     let baseDirectory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
       ?? FileManager.default.temporaryDirectory
-    let directory = baseDirectory.appendingPathComponent("GooseSwift", isDirectory: true)
+    let directory = baseDirectory.appendingPathComponent("OOPS", isDirectory: true)
     try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
     return directory
   }
@@ -443,7 +443,7 @@ extension MoreDataStore {
   static func documentsApplicationDirectory() -> URL {
     let baseDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
       ?? FileManager.default.temporaryDirectory
-    let directory = baseDirectory.appendingPathComponent("GooseSwift", isDirectory: true)
+    let directory = baseDirectory.appendingPathComponent("OOPS", isDirectory: true)
     try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
     return directory
   }

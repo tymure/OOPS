@@ -11,7 +11,7 @@ import HealthKit
 final class MoreDataStore: ObservableObject {
   @Published var databasePath: String
   @Published var storageStatus = "Not checked"
-  @Published var storageNextAction = "Run Check after Goose has created the local database"
+  @Published var storageNextAction = "Run Check after OOPS has created the local database"
   @Published var schemaVersion = "Unknown"
 
   @Published var captureSessionID: String?
@@ -198,7 +198,7 @@ final class MoreDataStore: ObservableObject {
 
   func liveNotificationCaptureSummary(ble: GooseBLEClient) -> String {
     if ble.connectionState == "ready" {
-      return "Ready; notifications are mirrored through GooseBLEClient.onNotification"
+      return "Ready; notifications are mirrored through the BLE notification handler"
     }
     if ble.isScanning {
       return "Scanning; capture starts after connection"
@@ -302,7 +302,7 @@ final class MoreDataStore: ObservableObject {
     guard databaseExists else {
       storageStatus = "Unavailable; no database at path"
       storageNextAction = "Start capture or run another bridge flow that creates goose.sqlite"
-      existingGooseRecordsStatus = "No Goose records"
+      existingGooseRecordsStatus = "No OOPS records"
       return
     }
 
@@ -371,7 +371,7 @@ final class MoreDataStore: ObservableObject {
   }
 
   func runAppleHealthDryRun() {
-    healthSyncReports = ["Apple Health metric sync disabled; Goose metrics must come from WHOOP packets or local estimates."]
+    healthSyncReports = ["Apple Health metric sync disabled; OOPS metrics must come from WHOOP packets or local estimates."]
   }
 
   func markHealthConnectUnavailable() {

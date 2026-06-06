@@ -72,7 +72,7 @@ enum CoachTipFactory {
         title: "\(route.title) Coach",
         message: "\(snapshot.title): \(snapshot.displayValue) | \(snapshot.status).",
         source: snapshot.provenance,
-        prompt: "Explain my \(route.title.lowercased()) page using the local Goose context. Cite the tool outputs and call out stale or missing data.",
+        prompt: "Explain my \(route.title.lowercased()) page using the local OOPS context. Cite the tool outputs and call out stale or missing data.",
         systemImage: "sparkles",
         tint: snapshot.tint
       )

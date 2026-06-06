@@ -29,7 +29,7 @@ final class OvernightSQLiteMirrorQueue: @unchecked Sendable {
     return formatter
   }()
 
-  private let queue = DispatchQueue(label: "com.goose.swift.overnight-sqlite-mirror", qos: .utility)
+  private let queue = DispatchQueue(label: "com.tymure.oops.overnight-sqlite-mirror", qos: .utility)
   private let rust = GooseRustBridge()
   private let databasePath: String
   private let maxQueuedRows: Int
